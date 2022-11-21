@@ -1,5 +1,5 @@
 .pulumi
-# **/bin/
+**/bin/
 **/obj/
 **/node_modules/
 vendor/
@@ -13,6 +13,6 @@ package-lock.json
 nuget/
 
 ci-scripts/
-# *.tar.gz
+*.tar.gz
 
 /provider/cmd/pulumi-resource-*/schema.go
