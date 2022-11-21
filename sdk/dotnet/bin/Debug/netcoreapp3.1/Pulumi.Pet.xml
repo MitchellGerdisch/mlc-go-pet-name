@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Pulumi.Pet</name>
+    </assembly>
+    <members>
+        <member name="M:Pulumi.Pet.Provider.#ctor(System.String,Pulumi.Pet.ProviderArgs,Pulumi.CustomResourceOptions)">
+             <summary>
+             Create a Provider resource with the given unique name, arguments, and options.
+             </summary>
+            
+             <param name="name">The unique name of the resource</param>
+             <param name="args">The arguments used to populate this resource's properties</param>
+             <param name="options">A bag of options that control this resource's behavior</param>
+        </member>
+        <member name="P:Pulumi.Pet.RandomName.PetName">
+            <summary>
+            The generated pet name.
+            </summary>
+        </member>
+        <member name="M:Pulumi.Pet.RandomName.#ctor(System.String,Pulumi.Pet.RandomNameArgs,Pulumi.ComponentResourceOptions)">
+             <summary>
+             Create a RandomName resource with the given unique name, arguments, and options.
+             </summary>
+            
+             <param name="name">The unique name of the resource</param>
+             <param name="args">The arguments used to populate this resource's properties</param>
+             <param name="options">A bag of options that control this resource's behavior</param>
+        </member>
+        <member name="P:Pulumi.Pet.RandomNameArgs.NumParts">
+            <summary>
+            Number of parts to pet name.
+            </summary>
+        </member>
+    </members>
+</doc>

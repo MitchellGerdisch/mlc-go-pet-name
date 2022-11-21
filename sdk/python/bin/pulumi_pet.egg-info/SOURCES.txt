@@ -1,0 +1,14 @@
+README.md
+setup.py
+pulumi_pet/__init__.py
+pulumi_pet/_utilities.py
+pulumi_pet/provider.py
+pulumi_pet/pulumi-plugin.json
+pulumi_pet/py.typed
+pulumi_pet/random_name.py
+pulumi_pet.egg-info/PKG-INFO
+pulumi_pet.egg-info/SOURCES.txt
+pulumi_pet.egg-info/dependency_links.txt
+pulumi_pet.egg-info/not-zip-safe
+pulumi_pet.egg-info/requires.txt
+pulumi_pet.egg-info/top_level.txt

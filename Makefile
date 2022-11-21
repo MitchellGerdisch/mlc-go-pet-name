@@ -1,6 +1,6 @@
 VERSION         := 0.0.1
 
-PACK            := xyz
+PACK            := pet
 PROJECT         := github.com/pulumi/pulumi-${PACK}
 
 PROVIDER        := pulumi-resource-${PACK}
@@ -17,6 +17,23 @@ generate:: gen_go_sdk gen_dotnet_sdk gen_nodejs_sdk gen_python_sdk
 build:: build_provider build_dotnet_sdk build_nodejs_sdk build_python_sdk
 
 install:: install_provider install_dotnet_sdk install_nodejs_sdk
+
+# Variations of build_provider that create the plugin tgz file with proper naming.
+# See: https://www.pulumi.com/docs/guides/pulumi-packages/how-to-author/#publish-your-package
+# example plugin install: pulumi plugin install resource pet 0.0.1 --file pulumi-resource-pet-v0.0.1-darwin-amd64.tar.gz
+build_mac_amd_plugin::
+	rm -rf ${WORKING_DIR}/bin/mac_amd/
+	cd provider/cmd/${PROVIDER} && VERSION=${VERSION} SCHEMA=${SCHEMA_PATH} go generate main.go
+	cd provider/cmd/${PROVIDER} && env GOOS=darwin GOARCH=amd64 go build -o ${WORKING_DIR}/bin/mac_amd/${PROVIDER} -ldflags "-X ${PROJECT}/${VERSION_PATH}=${VERSION}" .
+	(cd bin/mac_amd && tar --gzip -cf ../pulumi-resource-${PACK}-v${VERSION}-darwin-amd64.tar.gz .)
+	rm -rf ${WORKING_DIR}/bin/mac_amd/
+
+build_linux_amd_plugin::
+	rm -rf ${WORKING_DIR}/bin/linux_amd/
+	cd provider/cmd/${PROVIDER} && VERSION=${VERSION} SCHEMA=${SCHEMA_PATH} go generate main.go
+	cd provider/cmd/${PROVIDER} && env GOOS=linux GOARCH=amd64 go build -o ${WORKING_DIR}/bin/linux_amd/${PROVIDER} -ldflags "-X ${PROJECT}/${VERSION_PATH}=${VERSION}" .
+	(cd bin/linux_amd && tar --gzip -cf ../pulumi-resource-${PACK}-v${VERSION}-linux-amd64.tar.gz .)
+	rm -rf ${WORKING_DIR}/bin/linux_amd/
 
 
 # Provider

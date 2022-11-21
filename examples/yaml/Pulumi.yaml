@@ -1,0 +1,15 @@
+name: yaml-pet-mlc-example
+description: Test pet MLC
+runtime: yaml
+configuration: {}
+variables: {}
+resources: 
+  myPet:
+      type: pet:RandomName
+      properties:
+        numParts: 2
+      options:
+        pluginDownloadURL: "https://github.com/aaronfriel/pulumi-wordle/releases/download/v${VERSION}"
+
+outputs: 
+  petName: ${myPet.petName}
