@@ -1,4 +1,4 @@
-module github.com/pulumi/pulumi-pet
+module github.com/mitch/pulumi-pet
 
 go 1.17
 

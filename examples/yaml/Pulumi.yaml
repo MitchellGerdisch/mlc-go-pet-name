@@ -1,16 +1,16 @@
 name: yaml-pet-mlc-example
 description: Test pet MLC
 runtime: yaml
-configuration: {}
+config: {}
 variables: {}
 resources: 
   myPet:
       type: pet:RandomName
       properties:
-        numParts: 2
+        numParts: 3
       options:
-        # pluginDownloadURL: "https://mitch-mlc-plugins.s3.us-east-2.amazonaws.com"
-        pluginDownloadURL: "https://mitch-mlc-plugins.s3.us-east-2.amazonaws.com/pulumi-resource-pet-v0.0.1-darwin-amd64.tar.gz"
+        pluginDownloadURL: "https://mitch-mlc-plugins.s3.us-east-2.amazonaws.com"
+        version: 0.0.1
 
 outputs: 
   petName: ${myPet.petName}
