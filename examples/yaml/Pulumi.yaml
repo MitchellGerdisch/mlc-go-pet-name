@@ -9,7 +9,8 @@ resources:
       properties:
         numParts: 2
       options:
-        pluginDownloadURL: "https://github.com/aaronfriel/pulumi-wordle/releases/download/v${VERSION}"
+        # pluginDownloadURL: "https://mitch-mlc-plugins.s3.us-east-2.amazonaws.com"
+        pluginDownloadURL: "https://mitch-mlc-plugins.s3.us-east-2.amazonaws.com/pulumi-resource-pet-v0.0.1-darwin-amd64.tar.gz"
 
 outputs: 
   petName: ${myPet.petName}
