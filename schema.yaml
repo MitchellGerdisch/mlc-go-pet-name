@@ -23,7 +23,7 @@ language:
       Pulumi.Random: 4.*
   go:
     generateResourceContainerTypes: true
-    importBasePath: github.com/mitch/pulumi-pet/sdk/go/pet
+    importBasePath: github.com/pulumi/pulumi-pet/sdk/go/pet
   nodejs:
     dependencies:
       "@pulumi/random": "^4.0.0"

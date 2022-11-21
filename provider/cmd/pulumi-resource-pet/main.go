@@ -17,8 +17,8 @@
 package main
 
 import (
-	"github.com/mitch/pulumi-pet/pkg/provider"
-	"github.com/mitch/pulumi-pet/pkg/version"
+	"github.com/pulumi/pulumi-pet/pkg/provider"
+	"github.com/pulumi/pulumi-pet/pkg/version"
 )
 
 var providerName = "pet"
